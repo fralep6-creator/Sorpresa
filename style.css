@@ -34,6 +34,7 @@ h2 {
     border-bottom: 2px solid #f8bbd0;
     display: inline-block;
     padding-bottom: 5px;
+    margin-top: 5px;    /* Aggiunto per minimizzare lo spazio superiore */
     margin-bottom: 15px;
 }
 
@@ -42,7 +43,7 @@ h2 {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
     margin-bottom: 30px;
-    padding: 30px;
+    padding: 15px 25px 25px 25px; /* Ridotto il primo valore (sopra) da 30px a 15px */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -77,4 +78,178 @@ img, iframe {
 p {
     line-height: 1.6;
     font-size: 1.1rem;
+}
+
+/* Widget Calendario */
+.calendar-widget {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin: 20px auto;
+    max-width: 280px;
+    border: 1px solid #f8bbd0;
+}
+
+.calendar-header {
+    font-weight: bold;
+    color: #ad1457;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.calendar-grid span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+
+/* Giorni della settimana (intestazione) */
+.calendar-grid span:nth-child(-n+7) {
+    font-weight: bold;
+    color: #888;
+    font-size: 0.7rem;
+}
+
+/* Il giorno della partenza (28 Luglio) */
+.special-start {
+    background-color: #ad1457;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* I giorni evidenziati (il viaggio) */
+.highlight {
+    background-color: #fce4ec;
+    color: #ad1457;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.empty {
+    visibility: hidden;
+}
+/* Effetto per i giorni del mese successivo */
+.next-month {
+    opacity: 0.4; /* Li rende quasi trasparenti */
+    font-size: 0.7rem; /* Leggermente più piccoli per distacco visivo */
+}
+
+/* Se un giorno di agosto è evidenziato, manteniamo un po' di colore ma comunque sfumato */
+.highlight.next-month {
+    background-color: rgba(252, 228, 236, 0.6); /* Rosa più scarico */
+}
+
+/* STILE BIGLIETTO AEREO AGGIORNATO */
+.ticket {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 15px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ticket-header {
+    background: #ad1457;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem; /* Intestazione più grande */
+    letter-spacing: 2px;
+}
+
+.ticket-body {
+    padding: 25px 20px;
+}
+
+.route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.airport .label { 
+    font-size: 0.85rem; /* Label più leggibile */
+    color: #888; 
+}
+
+.airport .code { 
+    font-size: 2rem; /* Codici BRU/RTM giganti */
+    font-weight: bold; 
+    color: #333; 
+}
+
+.airport .city { 
+    font-size: 1rem; 
+    color: #555; 
+}
+
+.blurred {
+    filter: blur(6px); /* Sfocatura leggermente aumentata per sicurezza */
+    opacity: 0.5;
+}
+
+.plane-icon { font-size: 1.5rem; color: #ad1457; }
+.plane-icon.return { transform: rotate(180deg); }
+
+.ticket-divider {
+    border-top: 3px dashed #fce4ec;
+    margin: 20px 0;
+}
+
+.details {
+    font-size: 1.1rem; /* Data più grande */
+    color: #333;
+    text-align: center;
+    background: #fff5f8;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.ticket-footer {
+    background: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.ticket-footer p {
+    font-size: 1rem; /* Dedica più grande */
+    margin: 0;
+    color: #ad1457;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style-type: none; /* Rimuove i pallini neri standard */
+    padding: 0;
+    margin-top: 10px;
+    text-align: left; /* Allinea il testo a sinistra per una migliore lettura */
+    display: inline-block; /* Mantiene l'elenco centrato se il box è centrato */
+}
+
+li {
+    font-size: 1.1rem;
+    color: #4a148c;
+    margin-bottom: 8px; /* Spazio tra una voce e l'altra */
+}
+
+li::before {
+    content: "✨"; /* Puoi usare un'emoji come "punto" dell'elenco */
+    margin-right: 10px;
 }
