@@ -253,3 +253,53 @@ li::before {
     content: "✨"; /* Puoi usare un'emoji come "punto" dell'elenco */
     margin-right: 10px;
 }
+
+/* Container per la mappa */
+.map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%; 
+    position: relative;
+    height: 0;
+    border-radius: 15px; 
+    margin: 15px 0;
+    
+    /* 1. Cambia il colore di sfondo: se c'è un buco, vedrà il rosa del bordo invece del bianco */
+    background-color: #fce4ec; 
+    
+    /* 2. Forza il bordo */
+    border: 2px solid #fce4ec;
+    
+    /* Rimuove spazi di testo */
+    line-height: 0;
+    font-size: 0;
+}
+
+.map-container iframe {
+    position: absolute;
+    /* Spostiamo la mappa leggermente in su per 'mangiare' la fascia superiore */
+    top: -20px; 
+    left: -1px;
+    /* Aumentiamo l'altezza per compensare lo spostamento verso l'alto */
+    width: calc(100% + 2px);
+    height: calc(100% + 20px); 
+    
+    display: block;
+    border: none;
+    border-radius: 15px;
+}
+
+.btn-gioco {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ad1457;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(173, 20, 87, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-gioco:hover {
+    transform: scale(1.05);
+}
