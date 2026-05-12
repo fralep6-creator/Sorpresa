@@ -303,3 +303,18 @@ li::before {
 .btn-gioco:hover {
     transform: scale(1.05);
 }
+
+.btn-bebalive {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ad1457; /* Stesso rosa degli altri elementi */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-bebalive:hover {
+    background-color: #4a148c; /* Cambia colore al passaggio del mouse */
+}
